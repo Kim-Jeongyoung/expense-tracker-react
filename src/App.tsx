@@ -1,4 +1,12 @@
-import Expenses from './components/Expenses/Expenses';
+import ExpenseItem from './components/ExpenseItem';
+// import Expenses from './components/Expenses';
+
+interface Expense {
+  id: string;
+  title: string;
+  amount: number;
+  date: Date;
+}
 
 function App() {
   const expenses = [
@@ -25,7 +33,15 @@ function App() {
 
   return (
     <div>
-      <Expenses items={expenses} />
+      <h2>Let's get started!</h2>
+      {expenses.map((expense: Expense, index: number) => (
+        <ExpenseItem
+          key={index}
+          title={expense.title}
+          amount={expense.amount}
+          date={expense.date}
+        ></ExpenseItem>
+      ))}
     </div>
   );
 }
