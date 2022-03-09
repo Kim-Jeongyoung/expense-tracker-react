@@ -2,7 +2,13 @@ import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import './Expenses.css';
 
-function Expenses(props) {
+interface Expense {
+  id: string;
+  amount: number;
+  date: Date;
+}
+
+function Expenses(props: Expense) {
   return (
     <Card className="expenses">
       <ExpenseItem

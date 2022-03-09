@@ -31,3 +31,19 @@ function App() {
 }
 
 export default App;
+
+// return (
+//   <div>
+//     <h2>Let's get started!</h2>
+//     {
+//       expenses.map((expense: Expense, index: number) => (
+//         <ExpenseItem
+//           key={index}
+//           title={expense.title}
+//           amount={expense.amount}
+//           date={expense.date}
+//         ></ExpenseItem>
+//       ))
+//     }
+//   </div>
+// );
