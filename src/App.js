@@ -29,6 +29,11 @@ function App() {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('App');
+    console.log(expenses);
+  };
+
   // interface Expense {
   //   id: String;
   //   title: String;
@@ -38,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       {/* TODO  */}
       <Expenses items={expenses} />
       {/* {expenses.map((expense, index) => {
