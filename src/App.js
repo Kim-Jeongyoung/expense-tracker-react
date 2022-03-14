@@ -45,6 +45,7 @@ function App() {
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
       {/* TODO  */}
+
       <Expenses items={expenses} />
       {/* {expenses.map((expense, index) => {
         <ExpenseItem
