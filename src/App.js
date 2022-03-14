@@ -1,6 +1,6 @@
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
-// import ExpenseItem from './components/Expenses/ExpenseItem';
+
 function App() {
   const expenses = [
     {
@@ -44,17 +44,7 @@ function App() {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      {/* TODO  */}
-
       <Expenses items={expenses} />
-      {/* {expenses.map((expense, index) => {
-        <ExpenseItem
-          key={index}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        ></ExpenseItem>;
-      })} */}
     </div>
   );
 }
