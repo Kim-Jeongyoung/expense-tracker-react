@@ -18,7 +18,7 @@ const ExpenseForm = (props) => {
     //   ...userInput
     //   enteredTitle: event.targete.value,
     // });
-    // TODO
+
     // If your state update depends on the previous state use function form
     // setUserInput((prevState) => {
     //   return { ...prevState, enteredTitle: event.target.value };
@@ -47,7 +47,6 @@ const ExpenseForm = (props) => {
     setEnteredDate('');
   };
   return (
-    // TODO default browser behavior
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
@@ -80,6 +79,10 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        {/* //TODOcancel button 눌렀을 때  onCancel NewExpenses.js에서 가져온 것*/}
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
