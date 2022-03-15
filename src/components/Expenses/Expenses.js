@@ -21,7 +21,7 @@ const Expenses = (props) => {
         {/* need to add key: mapping out list of items /excute dynamic expression in our JSX*/}
         {props.items.map((expense) => (
           <ExpenseItem
-            // key={expense.id}
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
