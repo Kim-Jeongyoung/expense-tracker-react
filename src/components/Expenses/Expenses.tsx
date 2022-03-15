@@ -6,10 +6,16 @@ import ExpensesChart from './ExpensesChart';
 import Card from '../UI/Card';
 import './Expenses.css';
 
-const Expenses = (props) => {
+interface Expense {
+  title: string;
+  amount: number;
+  date: Date;
+}
+
+const Expenses = (props: { items: Expense[] }) => {
   const [filteredYear, setFilteredYear] = useState('2020');
 
-  const filterChangeHandler = (selectedYear) => {
+  const filterChangeHandler = (selectedYear: string) => {
     setFilteredYear(selectedYear);
   };
   // # Assignment 3

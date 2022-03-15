@@ -2,6 +2,13 @@ import { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
+export interface Expense {
+  id: string;
+  title: string;
+  amount: number;
+  date: Date;
+}
+
 const DUMMY_EXPENSES = [
   {
     id: 'e1',
@@ -29,10 +36,10 @@ const DUMMY_EXPENSES = [
   },
 ];
 function App() {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [expenses, setExpenses] = useState<Expense[]>(DUMMY_EXPENSES);
 
   // input new data
-  const addExpenseHandler = (expense) => {
+  const addExpenseHandler = (expense: Expense) => {
     // 이미 존재하는 data + 새로운 data: stat updating function을 써서 자동으로 새로운 데이타 받게 함
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
@@ -46,6 +53,7 @@ function App() {
   //   date: Date;
   // }
 
+  //TODO NEED TO FIX
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />

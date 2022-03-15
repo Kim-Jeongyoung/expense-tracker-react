@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 
 import ExpenseForm from './ExpenseForm';
-import './NewExpense.css';
 
-const NewExpense = (props) => {
+import './NewExpense.css';
+interface Expense {
+  id: string;
+  title: string;
+  amount: number;
+  date: Date;
+}
+
+interface NewExpenseProps { onAddExpense: (data: Expense) => void; }
+
+const NewExpense = (props: NewExpenseProps) => {
   // 68. NewExpenses button add
   const [isEditing, setIsEditing] = useState(false);
 
-  const saveExpenseDataHandler = (enteredExpenseData) => {
+  const saveExpenseDataHandler = (enteredExpenseData: Expense[]) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.random().toString(),
