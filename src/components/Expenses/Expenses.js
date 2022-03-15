@@ -10,6 +10,10 @@ const Expenses = (props) => {
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
+  // # Assignment 3
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
 
   return (
     <div>
@@ -18,8 +22,8 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
-        {/* need to add key: mapping out list of items /excute dynamic expression in our JSX*/}
-        {props.items.map((expense) => (
+        {/* #3 Assignment */}
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
             key={expense.id}
             title={expense.title}
